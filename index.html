@@ -52,7 +52,7 @@
 
             <!-- Logo + Nombre -->
             <div class="flex items-center space-x-3">
-                <img src="./assets/imagenes/logo.png" alt="Logo SoftUp" class="h-12 w-auto">
+                <img src="./assets/imagenes/logo.png" alt="Logo SoftUp" class="h-16 w-auto">
             </div>
 
             <!-- Navegación -->
@@ -97,17 +97,19 @@
 
             <!-- Imagen -->
             <div class="order-2 md:order-1">
-                <img src="./assets/imagenes/quienes_somos.jpg" alt="Equipo de trabajo"
-                    class="w-full h-auto rounded-xl shadow-lg">
+                <img src="./assets/imagenes/colaboradores.jpeg" alt="Equipo de trabajo"
+                    class="w-3/4 h-3/4 rounded-xl shadow-lg">
             </div>
 
             <!-- Texto -->
             <div class="text-center md:text-left order-1 md:order-2">
                 <h3 class="text-3xl font-bold text-blue-600 mb-6">¿Quiénes Somos?</h3>
                 <p class="text-lg text-gray-700 max-w-xl">
-                    <strong>SoftUp</strong> es una empresa especializada en desarrollo de software, consultoría y
-                    servicios en tecnologías de la información. Nuestro compromiso es brindar soluciones tecnológicas
-                    innovadoras que impulsen el crecimiento y la eficiencia de nuestros clientes.
+                    <strong>SoftUp</strong> En SoftUp, contamos con más de 15 años impulsando la transformación digital. 
+                    Desarrollamos software a medida acompañando a cada cliente en la automatización de sus procesos y mejoras tecnológicas, 
+                    gestionamos talento TI y brindamos soluciones tecnológicas que potencian negocios. <strong>Contamos con presencia en Chile, 
+                    Nos adaptamos a las necesidades de nuestros clientes</strong>, 
+                    trabajando con distintas empresas de diversas industrias buscando en conjunto soluciones innovadoras y eficientes.
                 </p>
             </div>
         </div>
@@ -202,8 +204,10 @@
             <h3 class="text-3xl font-bold text-blue-600 mb-6 animate__animated animate__fadeInDown">Nuestros Servicios
             </h3>
             <p class="max-w-3xl mx-auto mb-12 text-gray-700 text-lg animate__animated animate__fadeInUp">
-                En SoftUp ofrecemos soluciones tecnológicas pensadas para transformar tu negocio. Nuestro enfoque
-                combina innovación, experiencia y calidad para cubrir cada etapa del desarrollo y gestión tecnológica.
+                En SoftUp entregamos soluciones tecnológicas, transformando tus ideas en desarrollos de proyectos a medida.
+                Nuestro enfoque combina innovación, experiencia y calidad para cubrir cada etapa del desarrollo y gestión tecnológica, 
+                gestionamos talento TI y ofrecemos outsourcing estratégicos para optimizar procesos y operaciones, 
+                mejorar la experiencia de usuario, eficiencia TI y acelerar el crecimiento de tu empresa.
             </p>
 
             <div class="grid md:grid-cols-3 gap-8 text-left">
@@ -411,7 +415,7 @@
                     data-aos-delay="100">
                     <img src="./assets/imagenes/portafolio/veterinaria.webp" alt="veteApp"
                         class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110 cursor-pointer"
-                        onclick="openModal('modal2')">
+                        onclick="openModal('modal2')"/>
                     <div
                         class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white text-center px-4">
                         <div>
@@ -427,33 +431,27 @@
 
 
 
-
-
-
     <!-- Contacto -->
-    <section id="contacto" class="py-20 bg-white">
+    <section id="contacto" class="py-20 bg-white ">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
 
             <!-- Información de contacto -->
-            <div data-aos="fade-right">
-                <h3 class="text-3xl font-bold text-blue-600 mb-6">Contáctanos</h3>
+            <div data-aos="fade-right" class="text-center">
+                <h3 class="text-3xl font-bold text-blue-600 mb-6 px-6">Contáctanos</h3>
                 <p class="text-gray-700 mb-4">Estamos listos para ayudarte. Escríbenos o visítanos.</p>
 
-                <ul class="text-gray-800 space-y-4">
-                    <li><strong>📍 Dirección:</strong> Av. Nueva San Martín #1874, Maipú Santiago</li>
+                <ul class="text-gray-800 space-y-2">
+                    <li><strong>📍 Ubicación:</strong>Santiago, Chile</li>
                     <li><strong>📞 Teléfono:</strong> +56 9 5608 4013</li>
                     <li><strong>📧 Correo:</strong> contacto@softup.cl</li>
                 </ul>
 
-                <!-- Google Maps -->
-                <div class="mt-6 rounded-xl overflow-hidden shadow-lg">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.4145316178883!2d-70.64826808480048!3d-33.45694088077374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf6267e9659f%3A0x35b7cfa2f278b139!2sSantiago!5e0!3m2!1ses-419!2scl!4v1617123456789!5m2!1ses-419!2scl"
-                        width="100%" height="250" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
+                <div class="mt-6 rounded-xl overflow-hidden shadow-lg px-6 flex justify-center">
+                    <img src="./assets/imagenes/oficina.jpeg" alt="Equipo de trabajo"
+                        class="w-full h-[420px] rounded-xl shadow-lg mb-2 " 
+                    />
+                </div> 
+            </div> 
 
             <!-- Formulario de contacto -->
             <form action="https://formsubmit.co/lurzua@softup.cl" method="POST"
@@ -494,6 +492,7 @@
             </form>
 
         </div>
+       
     </section>
 
 
