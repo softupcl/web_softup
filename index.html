@@ -55,11 +55,10 @@
 
             <!-- Navegación -->
             <nav class="space-x-4 hidden md:block">
-                <a href="#quienes-somos" class=" text-blue-400 hover:text-orange-400">Quiénes Somos</a>
-                <a href="#servicios" class="text-blue-400 hover:text-orange-400">Servicios</a>
-                <a href="#clientes" class="text-blue-400 hover:text-orange-400">Clientes</a>
-                <a href="#portafolio" class="text-blue-400 hover:text-orange-400">Portafolio</a>
-                <a href="#contacto" class="text-blue-400 hover:text-orange-400">Contáctenos</a>
+                <a href="#quienes-somos" class=" text-blue-700 hover:text-orange-400">Quiénes Somos</a>
+                <a href="#servicios" class="text-blue-700 hover:text-orange-400">Servicios</a>
+                <a href="#clientes" class="text-blue-700 hover:text-orange-400">Clientes</a>
+                <a href="#contacto" class="text-blue-700 hover:text-orange-400">Contáctenos</a>
             </nav>
         </div>
     </header>
@@ -67,26 +66,52 @@
 
     <!-- Hero -->
     <section
-        class="relative min-h-[90vh] md:min-h-[80vh] flex items-center justify-center text-white pt-20 overflow-hidden">
-        <!-- Fondo con imagen + overlay -->
-        <div class="absolute inset-0">
-            <img src="./assets/imagenes/hero.jpg" alt="Fondo hero" class="w-full h-full object-cover opacity-30">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 opacity-70"></div>
+    class="relative overflow-hidden bg-gradient-to-b from-blue-50 via-transparent to-transparent pb-12 pt-20 sm:pb-16 sm:pt-32 lg:pb-24 xl:pb-32 xl:pt-40">
+    <div class="relative z-10">
+        <div
+            class="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]">
+            <svg class="h-[60rem] w-[100rem] flex-none stroke-blue-600 opacity-20" aria-hidden="true">
+                <defs>
+                    <pattern id="e9033f3e-f665-41a6-84ef-756f6778e6fe" width="200" height="200" x="50%" y="50%"
+                        patternUnits="userSpaceOnUse" patternTransform="translate(-100 0)">
+                        <path d="M.5 200V.5H200" fill="none"></path>
+                    </pattern>
+                </defs>
+                <svg x="50%" y="50%" class="overflow-visible fill-blue-50">
+                    <path d="M-300 0h201v201h-201Z M300 200h201v201h-201Z" stroke-width="0"></path>
+                </svg>
+                <rect width="100%" height="100%" stroke-width="0" fill="url(#e9033f3e-f665-41a6-84ef-756f6778e6fe)">
+                </rect>
+            </svg>
         </div>
-
-        <!-- Contenido del hero -->
-        <div class="relative z-10 text-center px-6 animate__animated animate__fadeInUp">
-            <h2 class="text-4xl md:text-6xl font-bold mb-6">Impulsamos tu negocio con tecnología</h2>
-            <p class="text-lg md:text-xl mb-8">Desarrollamos soluciones de software, asesorías y servicios TI adaptados
-                a tus necesidades.</p>
-            <a href="#servicios"
-                class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-full hover:bg-gray-200 transition">Conoce
-                nuestros servicios</a>
+    </div>
+    <div class="relative z-20 mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Impulsamos tu negocio 
+                <span class="text-blue-600">con tecnología
+           </span>
+            </h1>
+            <h2 class="mt-6 text-lg leading-8 text-gray-600">
+                Desarrollamos soluciones de software, asesorías y servicios TI adaptados
+                a tus necesidades.
+            </h2>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a class="isomorphic-link isomorphic-link--internal inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                    href="#servicios">Nuestros servicios
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
         </div>
-    </section>
-
-
-
+        <div class="relative mx-auto mt-10 max-w-lg">
+            <img class="w-full rounded-2xl border border-gray-100 shadow" src="./assets/imagenes/hero.jpg" alt="">
+        </div>
+    </div>
+</section>
     <!-- Quiénes Somos -->
 
     <section id="quienes-somos" class="py-16 bg-gray-50">
@@ -95,7 +120,7 @@
 
             <!-- Imagen -->
             <div class="order-2 md:order-1">
-                <img src="./assets/imagenes/colaboradores.jpeg" alt="Equipo de trabajo"
+                <img src="./assets/imagenes/quienes_somos.jpg" alt="Equipo de trabajo"
                     class="w-3/4 h-3/4 rounded-xl shadow-lg">
             </div>
 
@@ -109,7 +134,17 @@
                     Nos adaptamos a las necesidades de nuestros clientes</strong>, 
                     trabajando con distintas empresas de diversas industrias buscando en conjunto soluciones innovadoras y eficientes.
                 </p>
+                <a href="" class="flex items-center text-blue-700 border border-blue-600 py-2 px-6 mt-4 gap-2 rounded inline-flex items-center">
+                    <span>
+                        Ver más
+                    </span>
+                    <svg class="w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        viewBox="0 0 24 24" class="w-6 h-6 ml-2">
+                        <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
             </div>
+           
         </div>
 
         <!-- Cifras Clave / Logros -->
@@ -149,51 +184,34 @@
         </div>
     </section>
 
-    <!-- Misión y Visión -->
-    <section id="mision-vision"
-        class="py-20 relative bg-gradient-to-br from-blue-400 via-indigo-500 to-indigo-300 overflow-hidden">
-        <!-- Textura decorativa SVG (círculos) -->
-        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-0">
-            <svg class="w-full h-full" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <pattern id="pattern-circles" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <circle cx="2" cy="2" r="2" fill="#4c51bf" />
-                    </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#pattern-circles)" />
+    <!-- Llamada accion -->
+    <section class="relative z-10 overflow-hidden bg-indigo-600 py-16 px-8 mt-40">
+        <div class="container">
+            <div class="-mx-4 flex flex-wrap items-center">
+                <div class="w-full px-4 lg:w-1/2">
+                    <div class="text-center lg:text-left ">
+                        <div class="mb-10 lg:mb-0 ">
+                            <h1
+                                class="mt-0 mb-3 text-3xl font-bold leading-tight sm:text-4xl sm:leading-tight md:text-[40px] md:leading-tight text-white ">
+                                Hablemos para recibir asesoría personalizada.</h1>
+                            <p
+                                class="w-full text-base font-medium leading-relaxed sm:text-lg sm:leading-relaxed text-white">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2">
+                    <div class="text-center lg:text-right"><a
+                            class="font-semibold rounded-lg mx-auto inline-flex items-center justify-center bg-white py-4 px-9 hover:bg-opacity-90"
+                            href="#contacto">Escribenos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="absolute top-0 right-0 -z-10">
+            <svg width="388" height="250" viewBox="0 0 388 220" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.05" d="M203 -28.5L4.87819e-05 250.5L881.5 250.5L881.5 -28.5002L203 -28.5Z" fill="url(#paint0_linear_971_6910)"></path><defs><linearGradient id="paint0_linear_971_6910" x1="60.5" y1="111" x2="287" y2="111" gradientUnits="userSpaceOnUse"><stop offset="0.520507" stop-color="white"></stop><stop offset="1" stop-color="white" stop-opacity="0"></stop></linearGradient></defs></svg></span><span class="absolute top-0 right-0 -z-10"><svg width="324" height="250" viewBox="0 0 324 220" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.05" d="M203 -28.5L4.87819e-05 250.5L881.5 250.5L881.5 -28.5002L203 -28.5Z" fill="url(#paint0_linear_971_6911)"></path><defs><linearGradient id="paint0_linear_971_6911" x1="60.5" y1="111" x2="287" y2="111" gradientUnits="userSpaceOnUse"><stop offset="0.520507" stop-color="white"></stop><stop offset="1" stop-color="white" stop-opacity="0"></stop></linearGradient></defs></svg></span><span class="absolute top-4 left-4 -z-10"><svg width="43" height="56" viewBox="0 0 43 56" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.5"><circle cx="40.9984" cy="1.49626" r="1.49626" transform="rotate(90 40.9984 1.49626)" fill="white"></circle><circle cx="27.8304" cy="1.49626" r="1.49626" transform="rotate(90 27.8304 1.49626)" fill="white"></circle><circle cx="14.6644" cy="1.49626" r="1.49626" transform="rotate(90 14.6644 1.49626)" fill="white"></circle><circle cx="1.49642" cy="1.49626" r="1.49626" transform="rotate(90 1.49642 1.49626)" fill="white"></circle><circle cx="40.9984" cy="14.6642" r="1.49626" transform="rotate(90 40.9984 14.6642)" fill="white"></circle><circle cx="27.8304" cy="14.6642" r="1.49626" transform="rotate(90 27.8304 14.6642)" fill="white"></circle><circle cx="14.6644" cy="14.6642" r="1.49626" transform="rotate(90 14.6644 14.6642)" fill="white"></circle><circle cx="1.49642" cy="14.6642" r="1.49626" transform="rotate(90 1.49642 14.6642)" fill="white"></circle><circle cx="40.9984" cy="27.8302" r="1.49626" transform="rotate(90 40.9984 27.8302)" fill="white"></circle><circle cx="27.8304" cy="27.8302" r="1.49626" transform="rotate(90 27.8304 27.8302)" fill="white"></circle><circle cx="14.6644" cy="27.8302" r="1.49626" transform="rotate(90 14.6644 27.8302)" fill="white"></circle><circle cx="1.49642" cy="27.8302" r="1.49626" transform="rotate(90 1.49642 27.8302)" fill="white"></circle><circle cx="40.9984" cy="40.9982" r="1.49626" transform="rotate(90 40.9984 40.9982)" fill="white"></circle><circle cx="27.8304" cy="40.9963" r="1.49626" transform="rotate(90 27.8304 40.9963)" fill="white"></circle><circle cx="14.6644" cy="40.9982" r="1.49626" transform="rotate(90 14.6644 40.9982)" fill="white"></circle><circle cx="1.49642" cy="40.9963" r="1.49626" transform="rotate(90 1.49642 40.9963)" fill="white"></circle><circle cx="40.9984" cy="54.1642" r="1.49626" transform="rotate(90 40.9984 54.1642)" fill="white"></circle><circle cx="27.8304" cy="54.1642" r="1.49626" transform="rotate(90 27.8304 54.1642)" fill="white"></circle><circle cx="14.6644" cy="54.1642" r="1.49626" transform="rotate(90 14.6644 54.1642)" fill="white"></circle><circle cx="1.49642" cy="54.1642" r="1.49626" transform="rotate(90 1.49642 54.1642)" fill="white"></circle></g>
             </svg>
-        </div>
-
-        <!-- Contenido -->
-        <div class="relative container mx-auto px-6 grid md:grid-cols-2 gap-12 text-center z-10">
-
-            <!-- Misión -->
-            <div
-                class="bg-white bg-opacity-80 backdrop-blur-md rounded-xl shadow-lg p-8 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 animate__animated animate__zoomIn">
-                <div class="flex justify-center mb-4">
-                    <i data-lucide="target" class="w-10 h-10 text-blue-700"></i>
-                </div>
-                <h4 class="text-2xl font-bold text-blue-700 mb-4">Misión</h4>
-                <p class="text-gray-700">
-                    Brindar soluciones tecnológicas innovadoras y de alta calidad, impulsando la eficiencia y
-                    competitividad de nuestros clientes a través del desarrollo de software y servicios TI.
-                </p>
-            </div>
-
-            <!-- Visión -->
-            <div
-                class="bg-white bg-opacity-80 backdrop-blur-md rounded-xl shadow-lg p-8 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 animate__animated animate__zoomIn animate__delay-1s">
-                <div class="flex justify-center mb-4">
-                    <i data-lucide="eye" class="w-10 h-10 text-indigo-700"></i>
-                </div>
-                <h4 class="text-2xl font-bold text-indigo-700 mb-4">Visión</h4>
-                <p class="text-gray-700">
-                    Ser reconocidos como líderes en el desarrollo de soluciones digitales en Latinoamérica,
-                    comprometidos con la excelencia, la innovación y el crecimiento de nuestros clientes.
-                </p>
-            </div>
-
-        </div>
+        </span>
     </section>
 
     <!-- Servicios -->
@@ -201,7 +219,7 @@
         <div class="container mx-auto px-6 text-center">
             <h3 class="text-3xl font-bold text-orange-600 mb-6 animate__animated animate__fadeInDown">Nuestros Servicios
             </h3>
-            <p class="max-w-3xl mx-auto mb-12 text-gray-700 text-lg animate__animated animate__fadeInUp">
+            <p class="max-w-3xl mx-auto mb-12 text-gray-800 text-lg animate__animated animate__fadeInUp">
                 En SoftUp entregamos soluciones tecnológicas, transformando tus ideas en desarrollos de proyectos a medida.
                 Nuestro enfoque combina innovación, experiencia y calidad para cubrir cada etapa del desarrollo y gestión tecnológica, 
                 gestionamos talento TI y ofrecemos outsourcing estratégicos para optimizar procesos y operaciones, 
@@ -212,16 +230,16 @@
 
                 <!-- Servicio 1 -->
                 <div
-                    class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__zoomIn">
+                    class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__zoomIn">
                     <div class="flex justify-start mb-4">
-                        <i data-lucide="code" class="w-10 h-10 text-blue-400"></i>
+                        <i data-lucide="code" class="w-10 h-10 text-orange-400"></i>
                     </div>
-                    <h5 class="text-xl font-semibold text-blue-400 mb-2">Desarrollo de Software</h5>
-                    <p class="text-gray-600 mb-4">
+                    <h5 class="text-xl font-semibold text-orange-400 mb-2">Desarrollo de Software</h5>
+                    <p class="text-white mb-4">
                         Creamos sistemas digitales únicos que se adaptan a tus procesos y objetivos. Desde plataformas
                         empresariales hasta aplicaciones móviles.
                     </p>
-                    <ul class="text-gray-600 text-sm list-disc pl-5">
+                    <ul class="text-white text-sm list-disc pl-5">
                         <li>Aplicaciones web y móviles</li>
                         <li>Sistemas administrativos (ERP, CRM)</li>
                         <li>Integraciones con APIs</li>
@@ -232,16 +250,16 @@
 
                 <!-- Servicio 2 -->
                 <div
-                    class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__zoomIn animate__delay-1s">
+                    class="bg-gradient-to-br from-orange-300 to-orange-600 p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__zoomIn animate__delay-1s">
                     <div class="flex justify-start mb-4">
-                        <i data-lucide="settings" class="w-10 h-10 text-orange-400"></i>
+                        <i data-lucide="settings" class="w-10 h-10 text-blue-700"></i>
                     </div>
-                    <h5 class="text-xl font-semibold text-orange-400 mb-2">Consultoría TI</h5>
-                    <p class="text-gray-600 mb-4">
+                    <h5 class="text-xl font-semibold text-blue-700 mb-2">Consultoría TI</h5>
+                    <p class="text-white mb-4">
                         Te acompañamos en la toma de decisiones estratégicas sobre tecnología. Detectamos oportunidades
                         y planificamos tu transformación digital.
                     </p>
-                    <ul class="text-gray-600 text-sm list-disc pl-5">
+                    <ul class="text-white text-sm list-disc pl-5">
                         <li>Diagnóstico tecnológico</li>
                         <li>Transformación digital</li>
                         <li>Arquitectura de software</li>
@@ -252,16 +270,36 @@
 
                 <!-- Servicio 3 -->
                 <div
-                    class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__zoomIn animate__delay-2s">
+                class="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__zoomIn animate__delay-1s">
+                <div class="flex justify-start mb-4">
+                    <i data-lucide="code" class="w-10 h-10 text-orange-400"></i>
+                </div>
+                <h5 class="text-xl font-semibold text-orange-400 mb-2">Integración de sistemas</h5>
+                <p class="text-white mb-4">
+                    Optimizamos la integración entre sistemas para construir una infraestructura digital eficiente y segura conectando
+                    distintas tecnologías y nuevas soluciones que potenciaran tu empresa. 
+                </p>
+                <ul class="text-white text-sm list-disc pl-5">
+                    <li>Integración de plataformas</li>
+                    <li>Integración TI</li>
+                    <li>Integración de procesos</li>
+                    <li>Integración de aplicaciones</li>
+                    <li>Integración vertical</li>
+                </ul>
+            </div>
+
+                <!-- Servicio 3 -->
+                <div
+                    class="bg-gradient-to-br from-orange-300 to-orange-600 p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__zoomIn animate__delay-2s">
                     <div class="flex justify-start mb-4">
-                        <i data-lucide="life-buoy" class="w-10 h-10 text-blue-400"></i>
+                        <i data-lucide="life-buoy" class="w-10 h-10 text-blue-700"></i>
                     </div>
-                    <h5 class="text-xl font-semibold text-blue-400 mb-2">Soporte y Mantenimiento</h5>
-                    <p class="text-gray-600 mb-4">
+                    <h5 class="text-xl font-semibold text-blue-700 mb-2">Soporte y Mantenimiento</h5>
+                    <p class="text-white mb-4">
                         Nos encargamos de que tu infraestructura esté siempre operativa, actualizada y segura. Soporte
                         rápido y confiable.
                     </p>
-                    <ul class="text-gray-600 text-sm list-disc pl-5">
+                    <ul class="text-white text-sm list-disc pl-5">
                         <li>Mantenimiento correctivo y evolutivo</li>
                         <li>Gestión de servidores y redes</li>
                         <li>Seguridad y backups</li>
@@ -270,16 +308,16 @@
                     </ul>
                 </div>
                 <div
-                    class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__zoomIn animate__delay-3s">
+                    class="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__zoomIn animate__delay-3s">
                     <div class="flex justify-start mb-4">
                         <i data-lucide="phone-forwarded" class="w-10 h-10 text-orange-400"></i>
                     </div>
                     <h5 class="text-xl font-semibold text-orange-400 mb-2">Telefonía IP</h5>
-                    <p class="text-gray-600 mb-4">
+                    <p class="text-white mb-4">
                         Soluciones de comunicación modernas y eficientes para tu empresa. Instalamos y configuramos
                         sistemas telefónicos IP adaptados a tus necesidades.
                     </p>
-                    <ul class="text-gray-600 text-sm list-disc pl-5">
+                    <ul class="text-white text-sm list-disc pl-5">
                         <li>Instalación de centrales telefónicas (PBX)</li>
                         <li>Configuración de teléfonos IP</li>
                         <li>Diseño y creación de IVRs personalizados</li>
@@ -289,16 +327,16 @@
                 </div>
 
                 <div
-                    class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__zoomIn animate__delay-4s">
+                    class="bg-gradient-to-br from-orange-300 to-orange-600 p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__zoomIn animate__delay-4s">
                     <div class="flex justify-start mb-4">
-                        <i data-lucide="globe" class="w-10 h-10 text-blue-400"></i>
+                        <i data-lucide="globe" class="w-10 h-10 text-blue-700"></i>
                     </div>
-                    <h5 class="text-xl font-semibold text-blue-400 mb-2">Sitios Web con CMS</h5>
-                    <p class="text-gray-600 mb-4">
+                    <h5 class="text-xl font-semibold text-blue-700 mb-2">Sitios Web con CMS</h5>
+                    <p class="text-white mb-4">
                         Desarrollamos sitios web modernos, administrables y optimizados para buscadores, utilizando
                         plataformas CMS líderes del mercado.
                     </p>
-                    <ul class="text-gray-600 text-sm list-disc pl-5">
+                    <ul class="text-white text-sm list-disc pl-5">
                         <li>Sitios web corporativos con WordPress</li>
                         <li>Tiendas online con WooCommerce</li>
                         <li>E-commerce con PrestaShop</li>
@@ -311,8 +349,8 @@
     </section>
 
     <!-- Clientes -->
-    <section id="clientes" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
+    <section id="clientes" class="py-20 bg-white ">
+        <div class="container mx-auto px-6 text-center ">
             <h3 class="text-3xl font-bold text-orange-400 mb-4 animate__animated animate__fadeInDown">Nuestros Clientes
             </h3>
             <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
@@ -355,75 +393,63 @@
         </div>
     </section>
 
-  
-    <!-- Contacto -->
-    <section id="contacto" class="py-20 bg-white ">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
-
-            <!-- Información de contacto -->
-            <div data-aos="fade-right" class="text-center">
-                <h3 class="text-3xl font-bold text-orange-400 mb-6 px-6">Contáctanos</h3>
-                <p class="text-gray-700 mb-4">Estamos listos para ayudarte. Escríbenos o visítanos.</p>
-
-                <ul class="text-gray-800 space-y-2">
-                    <li><strong>📍 Ubicación:</strong>Santiago, Chile</li>
-                    <li><strong>📞 Teléfono:</strong> +56 9 5608 4013</li>
-                    <li><strong>📧 Correo:</strong> contacto@softup.cl</li>
-                </ul>
-
-                <div class="mt-6 rounded-xl overflow-hidden shadow-lg px-6 flex justify-center">
-                    <img src="./assets/imagenes/oficina.jpeg" alt="Equipo de trabajo"
-                        class="w-full h-[420px] rounded-xl shadow-lg mb-2 " 
-                    />
-                </div> 
-            </div> 
-
-            <!-- Formulario de contacto -->
-            <form action="https://formsubmit.co/lurzua@softup.cl" method="POST"
-                class="bg-white p-8 rounded-xl shadow-lg space-y-6" data-aos="fade-left">
-                <h4 class="text-2xl font-semibold text-orange-400 mb-4">Envíanos un mensaje</h4>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                    <input type="text" name="nombre" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
-                    <input type="email" name="email" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-                    <input type="tel" name="telefono" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-                    <textarea name="mensaje" rows="4" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                </div>
-
-                <button type="submit"
-                    class="w-full bg-blue-400 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Enviar
-                    Mensaje</button>
-
-                <!-- Opcional: ocultar CAPTCHA y redirigir -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="http://127.0.0.1:5500/gracias.html">
-            </form>
-
+    <section id="contacto" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 flex flex-col gap-12 items-center">
+      
+          <!-- Información de contacto -->
+          <div data-aos="fade-up" class="text-center max-w-2xl">
+            <h3 class="text-3xl font-bold text-orange-400 mb-6">Contáctanos</h3>
+            <p class="text-gray-700 mb-4">
+                Escríbenos hoy y descubre cómo podemos ayudarte a concretar ese proyecto tecnologico..</p>
+         
+          </div>
+      
+          <!-- Formulario de contacto -->
+          <form action="https://formsubmit.co/lurzua@softup.cl" method="POST"
+            class="bg-white p-8 rounded-xl shadow-lg space-y-6 w-full max-w-2xl" data-aos="fade-up">
+            <h4 class="text-2xl font-semibold text-orange-400 mb-4">Envíanos un mensaje</h4>
+      
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+              <input type="text" name="nombre" required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+      
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+              <input type="email" name="email" required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+      
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+              <input type="tel" name="telefono" required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+      
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+              <textarea name="mensaje" rows="4" required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+      
+            <button type="submit"
+              class="w-full bg-blue-700 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition">
+              Enviar Mensaje
+            </button>
+      
+            <!-- Opcional: ocultar CAPTCHA y redirigir -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/gracias.html">
+          </form>
         </div>
-    </section>
+      </section>
 
 
 
 
     <!-- Footer -->
-    <footer class="bg-blue-400 text-white py-12 mt-20">
+    <footer class="bg-blue-700 text-white py-12 mt-20">
         <div class="container mx-auto px-6 grid md:grid-cols-4 gap-10 text-m">
 
             <!-- Sobre nosotros -->
