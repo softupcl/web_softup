@@ -4,199 +4,800 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nosotros | SoftUp</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>SoftUp - Desarrollo de Software & Servicios TI</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
+
+    <!-- Heroicons (versión outline y solid) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /*CSS para imagen en movimiento*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: scroll;
+            height: 100vh;
+            background: radial-gradient(circle, #ffffff, #ffffff);
+        }
+
+        canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* Ensure  the width */
+            height: 100%;
+            /* Ensure canvas fully covers the height */
+        }
+
+        /*prueba timeline*/
+
+        @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
+
+        .design-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            min-height: 100vh;
+            padding: 100px 0;
+            font-family: Jost;
+        }
+
+        .design {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline {
+            width: 80%;
+            height: auto;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background: #ffffff;
+            -webkit-box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+            box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+            border-radius: 5px;
+            color: white;
+            padding: 1.75rem;
+            transition: 0.4s ease;
+            overflow-wrap: break-word !important;
+            margin: 1rem;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        .timeline-component {
+            margin: 0px 20px 20px 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .timeline {
+                display: grid;
+                grid-template-columns: 1fr 3px 1fr;
+            }
+
+            .timeline-middle {
+                position: relative;
+                background-image: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+                width: 3px;
+                height: 100%;
+            }
+
+            .main-middle {
+                opacity: 0;
+            }
+
+            .timeline-circle {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-image: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+                -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+        }
+    </style>
 </head>
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/56956084013?text=Hola%20SoftUp,%20me%20interesa%20una%20asesoría%20tecnológica"
+    class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110"
+    target="_blank" aria-label="Chat en WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 448 512">
+        <path
+            d="M380.9 97.1C339 55.1 283.1 32 224.1 32 100.3 32 0 132.3 0 256c0 45 11.7 88.5 33.9 127L2.5 480l100.8-30.9c36.3 19.9 77.1 30.4 120.8 30.4 123.7 0 224.1-100.3 224.1-224S412.8 129.1 380.9 97.1zM224.1 426c-38.4 0-76.2-10.3-109.1-29.7l-7.8-4.6-59.9 18.3 19.1-58.4-5.1-8C44.3 313.6 32 285.6 32 256c0-106 86.1-192.1 192.1-192.1 51.3 0 99.5 20 135.8 56.2 36.2 36.3 56.2 84.5 56.2 135.8 0 106-86.1 192.1-192.1 192.1zm101.1-138.4c-5.5-2.8-32.6-16.1-37.7-17.9-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 17.9-17.5 21.6c-3.2 3.7-6.4 4.1-11.9 1.4-32.6-16.3-54-29.1-75.3-66.2-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.2-17.1-41.3-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.7 6.9c-5.1 5.5-19.3 18.9-19.3 46s19.8 53.5 22.6 57.2c2.8 3.7 38.9 59.4 94.3 83.3 13.2 5.7 23.5 9.1 31.5 11.6 13.2 4.2 25.2 3.6 34.7 2.2 10.6-1.6 32.6-13.3 37.2-26.1 4.6-12.7 4.6-23.7 3.2-26.1-1.4-2.5-5.1-3.9-10.6-6.7z" />
+    </svg>
+</a>
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+<!-- Botón Scroll to Top -->
+<button id="scrollTopBtn"
+    class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-opacity opacity-0 pointer-events-none z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+</button>
 
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: scroll;
-        height: 100vh;
-        background: radial-gradient(circle, #1b2735, #090a0f);
-    }
 
-    canvas {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        /* Ensure  the width */
-        height: 100%;
-        /* Ensure canvas fully covers the height */
-    }
-</style>
+<body class="text-gray-800 bg-white">
+    <!-- Navbar -->
 
-<body class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white flex items-center justify-center h-screen">
-    <!--Cosmo Banner para pagina Nosotros-->
+    <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
 
-    <canvas id="cosmosCanvas"></canvas>
-    <script>
+            <!-- Logo + Nombre -->
+            <div class="flex items-center space-x-3">
+                <a href="index.html"><img src="./assets/imagenes/logo.png" alt="Logo SoftUp" class="h-16 w-auto"></a>
+            </div>
 
-        const canvas = document.getElementById('cosmosCanvas');
-        const ctx = canvas.getContext('2d');
+            <!-- Navegación -->
+            <nav class="space-x-4 hidden md:block">
+                <a href="/index.html" class="font-semibold  text-blue-700 hover:text-orange-400">Home</a>
+                <a href="#quienes-somos" class="font-semibold  text-blue-700 hover:text-orange-400">Quiénes Somos</a>
+                <a href="#servicios" class="font-semibold text-blue-700 hover:text-orange-400">Servicios</a>
+                <a href="#clientes" class="font-semibold text-blue-700 hover:text-orange-400">Clientes</a>
+                <a href="#contacto" class="font-semibold text-blue-700 hover:text-orange-400">Contáctenos</a>
+            </nav>
+        </div>
+    </header>
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
 
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+    <!-- Hero -->
+    <section
+        class="relative overflow-hidden bg-gradient-to-b from-indigo-700 to-blue-400 pb-12 pt-20 sm:pb-16 sm:pt-32 lg:pb-24 xl:pb-32 xl:pt-40">
+        <!--Cosmo Banner para pagina Nosotros-->
 
-        const particles = [];
-        const numParticles = 100;
+        <canvas id="cosmosCanvas"></canvas>
+        <script>
+            const canvas = document.getElementById('cosmosCanvas');
+            const ctx = canvas.getContext('2d');
 
-        class Particle {
-            constructor(x, y, radius, speed) {
-                this.x = x;
-                this.y = y;
-                this.radius = radius;
-                this.speed = speed;
-                this.angle = Math.random() * Math.PI * 2;
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
             }
 
-            update() {
-                this.x += Math.cos(this.angle) * this.speed;
-                this.y += Math.sin(this.angle) * this.speed;
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
 
-                // Bounce off edges
-                if (this.x < 0 || this.x > canvas.width) this.angle = Math.PI - this.angle;
-                if (this.y < 0 || this.y > canvas.height) this.angle = -this.angle;
+            const particles = [];
+            const numParticles = 300;
+
+            class Particle {
+                constructor(x, y, radius, speed) {
+                    this.x = x;
+                    this.y = y;
+                    this.radius = radius;
+                    this.speed = speed;
+                    this.angle = Math.random() * Math.PI * 2;
+                }
+
+                update() {
+                    this.x += Math.cos(this.angle) * this.speed;
+                    this.y += Math.sin(this.angle) * this.speed;
+
+                    // Bounce off edges
+                    if (this.x < 0 || this.x > canvas.width) this.angle = Math.PI - this.angle;
+                    if (this.y < 0 || this.y > canvas.height) this.angle = -this.angle;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                    ctx.fill();
+                }
             }
 
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-                ctx.fill();
+            // Initialize particles
+            for (let i = 0; i < numParticles; i++) {
+                particles.push(
+                    new Particle(
+                        Math.random() * canvas.width,
+                        Math.random() * canvas.height,
+                        Math.random() * 4 + 1,
+                        Math.random() * 0.5 + 0.2
+                    )
+                );
             }
-        }
 
-        // Initialize particles
-        for (let i = 0; i < numParticles; i++) {
-            particles.push(
-                new Particle(
-                    Math.random() * canvas.width,
-                    Math.random() * canvas.height,
-                    Math.random() * 4 + 1,
-                    Math.random() * 0.5 + 0.2
-                )
-            );
-        }
+            // Connect particles
+            function connectParticles() {
+                for (let a = 0; a < particles.length; a++) {
+                    for (let b = a + 1; b < particles.length; b++) {
+                        const dist = Math.hypot(
+                            particles[a].x - particles[b].x,
+                            particles[a].y - particles[b].y
+                        );
 
-        // Connect particles
-        function connectParticles() {
-            for (let a = 0; a < particles.length; a++) {
-                for (let b = a + 1; b < particles.length; b++) {
-                    const dist = Math.hypot(
-                        particles[a].x - particles[b].x,
-                        particles[a].y - particles[b].y
-                    );
-
-                    if (dist < 120) {
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 120})`;
-                        ctx.lineWidth = 0.7;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[a].x, particles[a].y);
-                        ctx.lineTo(particles[b].x, particles[b].y);
-                        ctx.stroke();
+                        if (dist < 120) {
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 120})`;
+                            ctx.lineWidth = 0.7;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y);
+                            ctx.stroke();
+                        }
                     }
                 }
             }
-        }
 
-        // Animation Loop
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-            connectParticles();
-            requestAnimationFrame(animate);
-        }
+            // Animation Loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+                connectParticles();
+                requestAnimationFrame(animate);
+            }
 
-        // Start Animation
-        animate();
+            // Start Animation
+            animate();
 
-    </script>
+        </script>
 
-
-
-    <div class="text-center px-6 animate__animated animate__fadeInUp">
-        <div class="mx-auto max-w-2xl text-center">
-            <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Caminando hacia la
-                <span class="text-orange-400">Transformación Digital</span>
-            </h1>
-        </div>
-
-        <div
-            class="mt-16 grid divide-x divide-y  divide-gray-700 overflow-hidden  rounded-3xl border text-gray-600 border-gray-700 sm:grid-cols-2 lg:grid-cols-4  lg:divide-y-0 xl:grid-cols-4">
-            <div class="group relative bg-gray-800 transition hover:z-[1] hover:shadow-2xl  hover:shadow-gray-600/10">
-                <div class="relative space-y-8 py-12 p-8">
-                    <img src="https://www.svgrepo.com/show/164986/logo.svg" loading="lazy" width="200" height="200"
-                        class="w-12 h-12 rounded-full" style="color:transparent">
-                    <div class="space-y-2">
-                        <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">2008</h5>
-                        <p class="text-gray-300">En AGOSTO Fundamos nuestra empresa bajo el nombre Systelcom.</p>
-                    </div>
-                </div>
+        <div class="text-center">
+            <div class="mx-auto max-w-2xl text-center">
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Caminando hacia la
+                    <span class="text-orange-400">Transformación Digital</span>
+                </h1>
             </div>
-            <div class="group relative bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
-                <div class="relative space-y-8 py-12 p-8">
-                    <img src="https://www.svgrepo.com/show/120853/logo.svg" loading="lazy" width="200" height="200"
-                        class="w-12 h-12 rounded-full" style="color:transparent">
-                    <div class="space-y-2">
-                        <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">2013</h5>
-                        <p class="text-gray-300">Con el éxito de nuestras primeras implementaciones, comenzamos a captar
-                            clientes de gran envergadura en el rubro. Esta experiencia nos llevó a diversificar nuestra
-                            oferta con una nueva línea de negocio: outsourcing operacional. A través de un equipo
-                            altamente capacitado, asumimos la operación de sistemas y la atención de reclamos para
-                            cuatro portadores de larga distancia en Chile y uno en Perú.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="group relative bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
-                <div class="relative space-y-8 py-12 p-8">
-                    <img src="https://www.svgrepo.com/show/120852/logo.svg" loading="lazy" width="200" height="200"
-                        class="w-12 h-12 rounded-full" style="color:transparent">
-                    <div class="space-y-2">
-                        <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">2018</h5>
-                        <p class="text-gray-300">Celebrando una década de trayectoria, dimos un paso importante:
-                            Systelcom se transforma en SoftUp. Este cambio de nombre refleja una nueva etapa, marcada
-                            por la salida de dos de los socios fundadores y la apertura hacia nuevos horizontes
-                            tecnológicos.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="group relative bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
-                <div class="relative space-y-8 py-12 p-8">
-                    <img src="https://www.svgrepo.com/show/120850/logo.svg" loading="lazy" width="200" height="200"
-                        class="w-12 h-12 rounded-full" style="color:transparent">
-                    <div class="space-y-2">
-                        <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">2025</h5>
-                        <p class="text-gray-300">Hoy, SoftUp continúa expandiéndose, integrando nuevos rubros como:                      
-                            Plataformas E-commerce, outsourcing TI y desarrollo de software a medida.                        
-                            Todo esto sin dejar de lado nuestro core business: el desarrollo de soluciones para telecomunicaciones.
-                            </p>
-                    </div>
-                </div>
+            <div class="relative mx-auto mt-10 max-w-lg">
+                <img class="w-full rounded-2xl border border-gray-100 shadow" src="./assets/imagenes/QuienesSomos.png"
+                    alt="">
             </div>
         </div>
-        <br>
-        <a href="index.html" class="inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded-full hover:bg-gray-200 transition">Volver al inicio</a>
-    </div>
+    </section>
+
+    <!--TIMELINE Trayectoria SOFTUP-->
+    <section id="trayectoria">
+        <div class="bg-gradient-to-b from-blue-400 to-indigo-700 text-white py-8">
+            <div class="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">
+                <div class="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
+                    <p class="ml-0 font-semibold text-2xl text-orange-500 uppercase ">Innovación en cada proyecto,
+                        soluciones que
+                        transforman.</p>
+                    <p class="text-3xl font-bold md:text-4xl leading-normal md:leading-relaxed mb-2">Nuestra Historia
+                    </p>
+                    <p class="text-sm font-semibold md:text-base text-gray-50 mb-4 text-justify">
+                        Iniciamos nuestras actividades en agosto de 2008 bajo el nombre Systelcom, nuestra empresa nació
+                        con una clara visión: ofrecer una alternativa sólida e innovadora en el desarrollo de software
+                        para empresas de telecomunicaciones. El nombre Systelcom refleja nuestra esencia: "Sys" por
+                        sistemas y "Telcom" por telecomunicaciones.
+                        Conformada por cuatro socios con una amplia trayectoria en distintas áreas del sector
+                        tecnológico, Systelcom se consolidó rápidamente como un actor relevante en la industria,
+                        desarrollando soluciones efectivas y adaptadas a las necesidades del mercado.
+                    </p>
+                    <p class="text-3xl md:text-4xl font-bold leading-normal md:leading-relaxed mb-2">Nuestra Evolución
+                    </p>
+                    <p class="text-sm md:text-base text-semibold text-gray-50 mb-4 text-justify">
+                        Con el éxito de nuestras primeras implementaciones, comenzamos a captar clientes de gran
+                        envergadura en el rubro. Esta experiencia nos llevó a diversificar nuestra oferta con una nueva
+                        línea de negocio: outsourcing operacional. A través de un equipo altamente capacitado, asumimos
+                        la operación de sistemas y la atención de reclamos para cuatro portadores de larga distancia en
+                        Chile y uno en Perú.
+                    </p>
+                    <p class="text-sm md:text-base text-gray-50 mb-4 text-justify">
+                        Durante los años siguientes, no solo mejoramos constantemente nuestros sistemas, sino que fuimos
+                        protagonistas de hitos clave en la industria de las telecomunicaciones, tales como:
+                    </p>
+
+                    <div>
+                        <ul class="mt-2 mb-4 space-y-3 font-medium">
+                            <li class="flex items-start lg:col-span-1">
+                                <div class="flex-shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <p class="ml-3 leading-5 font-semibold text-orange-400">
+                                    Ampliación de la numeración telefónica a 9 digitos
+                                </p>
+                            </li>
+                            <li class="flex items-start lg:col-span-1">
+                                <div class="flex-shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <p class="ml-3 leading-5 font-semibold text-orange-400">
+                                    Eliminación larga distancia nacional.
+                                </p>
+                            </li>
+                            <li class="flex items-start lg:col-span-1">
+                                <div class="flex-shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <p class="ml-3 leading-5 font-semibold text-orange-400">
+                                    Implementación de la portabilidad numérica.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--ACA SE PUEDE AGREGAR UNA IMAGEN-->
+                    <!-- Imagen -->
+                    <div class="order-2 md:order-1">
+                        <img src="./assets/imagenes/softupPublicidad_2.jpg" alt="Equipo de trabajo"
+                            class="w-full h-3/4 rounded-xl shadow-lg">
+                    </div>
+                </div>
+                <div class="ml-0 md:ml-12 lg:w-2/3 sticky">
+                    <div class="container mx-auto w-full h-full">
+                        <div class="relative wrap overflow-hidden p-10 h-full">
+                            <div class="border-2-2 border-yellow-555 absolute h-full border"
+                                style="right: 50%; border: 2px solid #FFC100; border-radius: 1%;"></div>
+                            <div class="border-2-2 border-yellow-555 absolute h-full border"
+                                style="left: 50%; border: 2px solid #FFC100; border-radius: 1%;"></div>
+                            <div class="mb-2 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1 w-5/12 px-1 py-4 text-right">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">Agosto, 2008</p>
+                                    <h4 class="mb-3 font-semibold text-lg md:text-2xl">Se funda SoftUp bajo el nombre de
+                                        Systelcom</h4>
+                                    <p class="text-sm md:text-base text-semibold leading-snug text-gray-50 text-opacity-100">
+                                        Se conforma con 4 profesionales con una solida y amplia trayectoria en el area
+                                        TI
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mb-2 flex justify-between items-center w-full right-timeline">
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1  w-5/12 px-1 py-4 text-left">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">2009</p>
+                                    <h4 class="mb-3 font-bold text-lg md:text-2xl">Lanzamiento Producto SCB</h4>
+                                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                                        Sistema de tazación para portadores de larga distancia.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mb-2 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1 w-5/12 px-1 py-4 text-right">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">2011 - 2012</p>
+                                    <h4 class="mb-3 font-bold text-lg md:text-2xl">Inicio portabilidad numerica</h4>
+                                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                                        Se modifica sistemas SCB para cumplir norma SUBTEL.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 flex justify-between items-center w-full right-timeline">
+                                <div class="order-1 w-5/12"></div>
+
+                                <div class="order-1  w-5/12 px-1 py-4">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">2011 - 2015</p>
+                                    <h4 class="mb-3 font-bold  text-lg md:text-2xl text-left">Sistema de portabilidad
+                                    </h4>
+                                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                                        Se crea consulta de prevalidación de numeros telefonicos para portabilidad
+                                        numerica en Chile.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1 w-5/12 px-1 py-4 text-right">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">2015 - 2017</p>
+                                    <h4 class="mb-3 font-bold text-lg md:text-2xl">Se crea area de explotación de
+                                        sistemas</h4>
+                                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                                        Nos adjudicamos las operaciones de portadores de larga distancia de clientes en
+                                        chile y peru.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 flex justify-between items-center w-full right-timeline">
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1  w-5/12 px-1 py-4">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">2017 - 2018</p>
+                                    <h4 class="mb-3 font-bold  text-lg md:text-2xl text-left">Integración con sistema
+                                        INE</h4>
+                                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                                        Se integra sistema SCB con sistema INE (Instituto Nacional de Estadisticas).
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1 w-5/12 px-1 py-4 text-right">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">2018</p>
+                                    <h4 class="mb-3 font-bold text-lg md:text-2xl">Un nuevo ciclo</h4>
+                                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                                        Celebrando una década de trayectoria, dimos un paso importante: Systelcom se
+                                        transforma en SoftUp. Este cambio de nombre refleja una nueva etapa, marcada por
+                                        la salida de dos de los socios fundadores y la apertura hacia nuevos horizontes
+                                        tecnológicos.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 flex justify-between items-center w-full right-timeline">
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1  w-5/12 px-1 py-4">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">2019 - 2020</p>
+                                    <h4 class="mb-3 font-bold  text-lg md:text-2xl text-left">Sistema SCB Upgrade</h4>
+                                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                                        Se realiza un upgrade del sistema SCB, incorporando nuevas funcionalidades y
+                                        mejoras en la experiencia del usuario. Este upgrade nos permitió agregar
+                                        clientes los cuales
+                                        tenian telefonia IP.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1 w-5/12 px-1 py-4 text-right">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">2020 - 2021</p>
+                                    <h4 class="mb-3 font-bold text-lg md:text-2xl">Nueva area de negocio</h4>
+                                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                                        Producto de los grandes cambios en la forma de trabajar, se crea una nueva area
+                                        de negocio
+                                        orientada al outsourcing de especialistas TI.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 flex justify-between items-center w-full right-timeline">
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1  w-5/12 px-1 py-4">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">2021 - 2023</p>
+                                    <h4 class="mb-3 font-bold  text-lg md:text-2xl text-left">Creamos un nuevo producto
+                                    </h4>
+                                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                                        Luego de varias investigaciones y desarrollo, lanzamos un nuevo producto llamado
+                                        ThomCRM orientado a la
+                                        automatización de procesos de negocio, el cual permite a nuestros clientes
+                                        optimizar de manera sencilla y rapida sus
+                                        procesos internos de ventas, marketing y atención al cliente.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1 w-5/12 px-1 py-4 text-right">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">2023 - 2024</p>
+                                    <h4 class="mb-3 font-bold text-lg md:text-2xl">Caminando junto a la IA</h4>
+                                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                                        En SoftUp, estamos comprometidos con la innovación y la mejora continua. En este
+                                        sentido, hemos comenzado a incorporar
+                                        herramientas de inteligencia artificial en nuestros procesos internos y en el
+                                        desarrollo de nuevos productos.
+                                        Nuestro objetivo es seguir liderando el camino hacia la transformación digital y
+                                        ofrecer soluciones cada vez más
+                                        avanzadas y eficientes a nuestros clientes.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 flex justify-between items-center w-full right-timeline">
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1  w-5/12 px-1 py-4">
+                                    <p class="mb-3 text-2xl text-bold text-yellow-300">2024 - 2025</p>
+                                    <h4 class="mb-3 font-bold  text-lg md:text-2xl text-left">Se incorporan nuevos
+                                        talentos</h4>
+                                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                                        tras el crecimiento de la empresa, se incorporan nuevos talentos al equipo de
+                                        trabajo, siendo Sebastian Enrique Rivas Rozas el nuevo CTO de la empresa.
+                                        y Maria Jesus Portillo Acuña nuestra nueva CMO.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-16 bg-gradient-to-b from-indigo-700 to-blue-700">
+        <div class="container mx-auto px-6 text-center">
+            <!-- Page Container -->
+            <div class="flex items-center justify-center min-h-screen">
+                <div class="flex flex-col">
+                    <div class="flex flex-col mt-8">
+                        <!-- Meet the Team -->
+                        <div class="container max-w-7xl px-4">
+                            <!-- Section Header -->
+                            <div class="flex flex-wrap justify-center text-center mb-24">
+                                <div class="w-full lg:w-6/12 px-4">
+                                    <!-- Header -->
+                                    <h1 class="text-orange-400 text-4xl font-bold mb-8">
+                                        Nuestro equipo de trabajo
+                                    </h1>
+
+                                    <!-- Description -->
+                                    <p class="text-white text-lg font-light">
+                                        Contamos con un equipo de profesionales altamente capacitados y apasionados por
+                                        la
+                                        tecnología. Nos dedicamos a brindar soluciones innovadoras y personalizadas para
+                                        cada cliente. </p>
+                                </div>
+                            </div>
+
+                            <!-- Team Members -->
+                            <div class="flex flex-wrap justify-center">
+                                <!-- Member #1 -->
+                                <div class="fit-cover w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                                    <div class="flex flex-col">
+                                        <!-- Avatar -->
+                                        <a href="#" class="mx-auto">
+                                            <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                            src="./assets/imagenes/team/team.png">
+                                        </a>
+
+                                        <!-- Details -->
+                                        <div class="text-center mt-6">
+                                            <!-- Name -->
+                                            <h1 class="text-grey-100 text-xl font-bold mb-1">
+                                                Luis Felipe Urzua Urzua
+                                            </h1>
+
+                                            <!-- Title -->
+                                            <div class="text-white font-semibold mb-2">
+                                                CEO & Founder
+                                            </div>
+
+                                            <!-- Social Icons -->
+                                            <div class="flex items-center justify-center opacity-90 hover:opacity-100
+                                                transition-opacity duration-300">
+                                                <!-- Linkedin -->
+                                                <a href="https://www.linkedin.com/in/lurzua/" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                                    <i class="mdi mdi-linkedin text-indigo-500 mx-auto mt-2"></i>
+                                                </a>
+
+                                                <!-- Twitter -->
+                                                <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                                    <i class="mdi mdi-twitter text-blue-300 mx-auto mt-2"></i>
+                                                </a>
+
+                                                <!-- Instagram -->
+                                                <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                                    <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Member #2 -->
+                                <div class="fit-cover w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                                    <div class="flex flex-col ">
+                                        <!-- Avatar -->
+                                        <a href="#" class="mx-auto">
+                                            <img class="  rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                                src="./assets/imagenes/team/SebastianRivasRozas.jpg">
+                                        </a>
+
+                                        <!-- Details -->
+                                        <div class="text-center mt-6">
+                                            <!-- Name -->
+                                            <h1 class="text-grey-100 text-xl font-bold mb-1">
+                                                Sebastian Rivas Rozas
+                                            </h1>
+
+                                            <!-- Title -->
+                                            <div class="text-white font-semibold mb-2">
+                                                CTO
+                                            </div>
+
+                                            <!-- Social Icons -->
+                                            <div class="flex items-center justify-center opacity-90 hover:opacity-100
+                                transition-opacity duration-300">
+                                                <!-- Linkedin -->
+                                                <a href="https://www.linkedin.com/in/sebastian-enrique-rivas-rozas-40972295/" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                                    <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
+                                                </a>
+
+                                                <!-- Twitter -->
+                                                <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                                    <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
+                                                </a>
+
+                                                <!-- Instagram -->
+                                                <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                                    <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--FIN-->
+                                <!--Comienzo para otro Miembro-->
+                                <!-- Member #3 -->
+                                <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                                    <div class="flex flex-col">
+                                        <!-- Avatar -->
+                                        <a href="#" class="mx-auto">
+                                            <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                            src="./assets/imagenes/team/team.png">
+                                        </a>
+
+                                        <!-- Details -->
+                                        <div class="text-center mt-6">
+                                            <!-- Name -->
+                                            <h1 class="text-grey-100 text-xl font-bold mb-1">
+                                                Maria Jesus Portillo Acuña
+                                            </h1>
+
+                                            <!-- Title -->
+                                            <div class="text-white font-semibold mb-2">
+                                                CMO
+                                            </div>
+
+                                            <!-- Social Icons -->
+                                            <div class="flex items-center justify-center opacity-90 hover:opacity-100
+                                transition-opacity duration-300">
+                                                <!-- Linkedin -->
+                                                <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                                    <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
+                                                </a>
+
+                                                <!-- Twitter -->
+                                                <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                                    <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
+                                                </a>
+
+                                                <!-- Instagram -->
+                                                <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                                    <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                                    <div class="flex flex-col">
+                                        <!-- Avatar -->
+                                        <a href="#" class="mx-auto">
+                                            <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                            src="./assets/imagenes/team/team.png">
+                                        </a>
+
+                                        <!-- Details -->
+                                        <div class="text-center mt-6">
+                                            <!-- Name -->
+                                            <h1 class="text-grey-100 text-xl font-bold mb-1">
+                                                Cristián Alejandro Urzúa
+                                            </h1>
+
+                                            <!-- Title -->
+                                            <div class="text-white font-semibold mb-2">
+                                                PMO
+                                            </div>
+
+                                            <!-- Social Icons -->
+                                            <div class="flex items-center justify-center opacity-90 hover:opacity-100
+                                transition-opacity duration-300">
+                                                <!-- Linkedin -->
+                                                <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                                    <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
+                                                </a>
+
+                                                <!-- Twitter -->
+                                                <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                                    <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
+                                                </a>
+
+                                                <!-- Instagram -->
+                                                <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                                    <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Fin otro Miembro-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gradient-to-b from-blue-700 to-blue-700 text-white">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-10 text-m">
+
+            <!-- Sobre nosotros -->
+            <div>
+                <h5 class="text-white text-lg font-semibold mb-4">SoftUp</h5>
+                <p>
+                    Somos una empresa especializada en el desarrollo de software, consultoría y servicios en tecnologías
+                    de la información.
+                </p>
+            </div>
+
+            <!-- Enlaces útiles -->
+            <div>
+                <h5 class="text-white text-lg font-semibold mb-4">Enlaces</h5>
+                <ul class="space-y-2">
+                    <li><a href="#quienes-somos" class="hover:text-white">¿Quiénes Somos?</a></li>
+                    <li><a href="#servicios" class="hover:text-white">Servicios</a></li>
+                    <li><a href="#portafolio" class="hover:text-white">Portafolio</a></li>
+                    <li><a href="#contacto" class="hover:text-white">Contáctanos</a></li>
+                </ul>
+            </div>
+
+            <!-- Contacto -->
+            <div>
+                <h5 class="text-white text-lg font-semibold mb-4">Contacto</h5>
+                <ul class="space-y-2">
+                    <li><span class="font-semibold">Email:</span> contacto@softup.com</li>
+                    <li><span class="font-semibold">Teléfono:</span> +569 5608 4013</li>
+                    <li><span class="font-semibold">Ubicación:</span> Santiago, Chile</li>
+                </ul>
+            </div>
+
+            <!-- Redes sociales -->
+            <div>
+                <h5 class="text-white text-lg font-semibold mb-4">Síguenos</h5>
+                <div class="flex gap-4 text-white">
+                    <a href="https://www.linkedin.com/company/softup-chile/" class="hover:text-white" title="LinkedIn">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="hover:text-white" title="Instagram">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="hover:text-white" title="Facebook">
+                        <i data-lucide="facebook" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Línea inferior -->
+        <div class="mt-10 border-t border-blue-500 pt-6 text-center text-m text-white">
+            &copy; <span id="anio"></span> SoftUp. Todos los derechos reservados.
+        </div>
+    </footer>
+
 </body>
 
 </html>
