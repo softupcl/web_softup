@@ -146,15 +146,27 @@
     <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
 
-            <!-- Logo + Nombre -->
+            <!-- Logo -->
             <div class="flex items-center space-x-3">
-                <a href="index.html"><img src="./assets/imagenes/logo.png" alt="Logo SoftUp" class="h-12 w-auto"></a>
+                <a href="index.html">
+                    <img src="./assets/imagenes/logo.png" alt="Logo SoftUp" class="h-12 w-auto">
+                </a>
             </div>
 
-            <!-- Navegación -->
-            <nav class="space-x-4 hidden md:block">
-                <a href="index.html" class="font-semibold  text-blue-700 hover:text-orange-400">Home</a>
-                <a href="#quienes-somos" class="font-semibold  text-blue-700 hover:text-orange-400">Quiénes Somos</a>
+            <!-- Botón hamburguesa (visible solo en móviles) -->
+            <button id="nav-menu-toggle" class="md:hidden text-blue-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Menú de navegación (oculto en móvil por defecto) -->
+            <nav id="nav-menu"
+                class="hidden md:flex flex-col md:flex-row md:items-center space-y-8 md:space-y-0 md:space-x-4 absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent px-6 py-4 md:p-0 shadow-md md:shadow-none">
+                <a href="index.html" class="font-semibold text-blue-700 hover:text-orange-400">Home</a>
+                <a href="#quienes-somos" class="font-semibold text-blue-700 hover:text-orange-400">Quiénes Somos</a>
                 <a href="#servicios" class="font-semibold text-blue-700 hover:text-orange-400">Servicios</a>
                 <a href="#clientes" class="font-semibold text-blue-700 hover:text-orange-400">Clientes</a>
                 <a href="#contacto" class="font-semibold text-blue-700 hover:text-orange-400">Contáctenos</a>
@@ -277,7 +289,7 @@
         <div class="bg-gradient-to-b from-blue-400 to-indigo-700 text-white py-8">
             <div class="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">
                 <div class="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
-                    <p class="ml-0 font-semibold text-2xl text-orange-500 uppercase ">Innovación en cada proyecto,
+                    <p class="ml-0 font-semibold text-2xl text-yellow-400 uppercase ">Innovación en cada proyecto,
                         soluciones que
                         transforman.</p>
                     <p class="text-3xl font-bold md:text-4xl leading-normal md:leading-relaxed mb-2">Nuestra Historia
@@ -315,7 +327,7 @@
                                             clip-rule="evenodd"></path>
                                     </svg>
                                 </div>
-                                <p class="ml-3 leading-5 font-semibold text-orange-400">
+                                <p class="ml-3 leading-5 font-semibold text-yellow-400">
                                     Ampliación de la numeración telefónica a 9 digitos
                                 </p>
                             </li>
@@ -327,7 +339,7 @@
                                             clip-rule="evenodd"></path>
                                     </svg>
                                 </div>
-                                <p class="ml-3 leading-5 font-semibold text-orange-400">
+                                <p class="ml-3 leading-5 font-semibold text-yellow-400">
                                     Eliminación larga distancia nacional.
                                 </p>
                             </li>
@@ -339,7 +351,7 @@
                                             clip-rule="evenodd"></path>
                                     </svg>
                                 </div>
-                                <p class="ml-3 leading-5 font-semibold text-orange-400">
+                                <p class="ml-3 leading-5 font-semibold text-yellow-400">
                                     Implementación de la portabilidad numérica.
                                 </p>
                             </li>
@@ -538,7 +550,7 @@
             <div class="grid md:grid-cols-4 gap-16 mt-4 ">
                 <div class="space-y-4">
                     <a href="#" target="_blank" class="space-y-4">
-                        <img src="https://randomuser.me/api/portraits/men/12.jpg"
+                        <img src="assets/imagenes/team/team.png"
                             class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56">
 
                         <h3 class="font-medium text-white text-2xl text-center">
@@ -564,7 +576,7 @@
 
                 <div class="space-y-4">
                     <a href="#" target="_blank" class="space-y-4">
-                        <img src="/assets/imagenes/team/SebastianRivasRozas.jpg"
+                        <img src="assets/imagenes/team/SebastianRivasRozas.jpg"
                             class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56">
 
                         <h3 class="font-medium text-white text-2xl text-center">
@@ -590,7 +602,7 @@
 
                 <div class="space-y-4">
                     <a href="#" target="_blank" class="space-y-4">
-                        <img src="https://randomuser.me/api/portraits/women/1.jpg"
+                        <img src="assets/imagenes/team/team.png"
                             class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56">
 
                         <h3 class="font-medium text-white text-2xl text-center">
@@ -617,12 +629,12 @@
 
                 <div class="space-y-4">
                     <a href="#" target="_blank" class="space-y-4">
-                        <img src="https://randomuser.me/api/portraits/men/8.jpg"
+                        <img src="assets/imagenes/team/curzua.jpg"
                             class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56">
 
                         <h3 class="font-medium text-white text-2xl text-center">
                             Cristían Urzúa Urzúa
-                            <p class="text-sm text-gray-400">CMO</p>
+                            <p class="text-sm text-gray-400">PMO</p>
                         </h3>
                     </a>
 
@@ -705,6 +717,44 @@
             &copy; <span id="anio"></span> SoftUp. Todos los derechos reservados.
         </div>
     </footer>
+
+
+    <script>
+        lucide.createIcons();
+        AOS.init();
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,
+            autoplay: {
+                delay: 1000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 3, spaceBetween: 30 },
+                1024: { slidesPerView: 4, spaceBetween: 40 },
+            },
+        });
+
+       
+
+        AOS.init({
+            duration: 1000, // duración de la animación
+            once: true,     // animar solo una vez al hacer scroll
+            easing: 'ease-in-out',
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('nav-menu-toggle');
+            const menu = document.getElementById('nav-menu');
+            console.log(menuToggle)
+
+            menuToggle.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                
+            });
+        });
+
+    </script>
 
 </body>
 
