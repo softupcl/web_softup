@@ -141,6 +141,16 @@
 
 
 <body class="text-gray-800 bg-white">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-white flex flex-col items-center justify-center z-50">
+        <!-- Logo -->
+        <img src="./assets/imagenes/logo.png" alt="Cargando..." class="w-24 h-auto mb-4 animate-pulse">
+
+        <!-- Spinner -->
+        <div class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
     <!-- Navbar -->
 
     <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
@@ -752,6 +762,20 @@
                 menu.classList.toggle('hidden');
                 
             });
+        });
+
+        window.addEventListener("load", function () {
+            const preloader = document.getElementById("preloader");
+            if (preloader) {
+                // Espera 2 segundos después de cargar
+                setTimeout(() => {
+                    preloader.style.opacity = "0";
+                    preloader.style.transition = "opacity 0.5s ease";
+                    setTimeout(() => {
+                        preloader.style.display = "none";
+                    }, 500); // Espera a que termine la transición
+                }, 1000); // 2000 ms = 2 segundos
+            }
         });
 
     </script>
